@@ -1,0 +1,41 @@
+.head{
+      background-color: #3d3d3d;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      font-family: 'Courier New', Courier, monospace;
+}
+
+.voucher-main{
+      flex-direction: row;
+      display: flex;
+      flex: 1 1 0%;
+      border: 1px solid #0f0000;
+      border-radius: 8px;
+      position: relative;
+      padding: 0.5rem 1rem 0.5rem 0;
+      padding: 20px;
+      margin: 20px;
+}
+
+.mgg{
+      /* border: 1px solid #3d3d3d; */
+}
+
+.board{
+      display: flex;
+      flex-wrap: wrap;
+}
+
+.action-voucher{
+      display: flex;
+      flex-direction: column;
+}
+
+.btn{
+      margin: 10px;
+      padding: 10px;
+
+}
