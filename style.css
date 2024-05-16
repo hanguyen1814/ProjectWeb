@@ -1,46 +1,46 @@
 .head{
-      background-color: #fa0202;
-      color: white;
-      padding: 10px;
-      text-align: center;
-      position: sticky;
-      top: 0;
-      font-family: 'Courier New', Courier, monospace;
+  background-color: #fa0202;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .voucher-main{
-      flex-direction: row;
-      display: flex;
-      flex: 1 1 0%;
-      border: 1px solid #0f0000;
-      border-radius: 8px;
-      position: relative;
-      padding: 0.5rem 1rem 0.5rem 0;
-      padding: 30px;
-      margin: 20px;
+  flex-direction: row;
+  display: flex;
+  flex: 1 1 0%;
+  border: 1px solid #0f0000;
+  border-radius: 8px;
+  position: relative;
+  padding: 0.5rem 1rem 0.5rem 0;
+  padding: 30px;
+  margin: 20px;
 }
 
 .mgg{
-      /* border: 1px solid #3d3d3d; */
+  /* border: 1px solid #3d3d3d; */
 }
 
 .board{
-      display: flex;
-      flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .action-voucher{
-      display: flex;
-      flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 .infor-voucher{
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .btn{
-      margin: 10px;
-      padding: 10px;
+  margin: 10px;
+  padding: 10px;
 
 }
