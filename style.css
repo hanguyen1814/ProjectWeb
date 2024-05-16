@@ -1,46 +1,94 @@
-.head{
-  background-color: #fa0202;
+.head {
+  background: linear-gradient(135deg, #4c669f, #3b5998);
   color: white;
-  padding: 10px;
+  padding: 15px;
   text-align: center;
   position: sticky;
   top: 0;
   font-family: 'Courier New', Courier, monospace;
+  font-size: 24px;
+  font-weight: bold;
+  border-bottom: 5px solid #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
 }
-
-.voucher-main{
-  flex-direction: row;
+.under-head {
   display: flex;
-  flex: 1 1 0%;
-  border: 1px solid #0f0000;
-  border-radius: 8px;
-  position: relative;
-  padding: 0.5rem 1rem 0.5rem 0;
-  padding: 30px;
-  margin: 20px;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-radius: 10px;
 }
-
-.mgg{
-  /* border: 1px solid #3d3d3d; */
+.under-head a {
+  text-decoration: none;
+  color: #333;
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
-
+.under-head a:hover {
+  background-color: #ccc;
+  color: #fff;
+}
 .board{
   display: flex;
   flex-wrap: wrap;
+  background-color: #ffffff;
+  justify-content: center;
 }
-
-.action-voucher{
+.mgg{
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  margin: 10px;
+  align-items: center;
+
 }
-.infor-voucher{
+.voucher-main{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #0f0000;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.voucher-main img {
+  width: 100px; 
+    height: auto; 
+    border-radius: 50%; 
+    border: 2px solid #fff; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.action-voucher {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+}
+.info-voucher progress {
+  width: 100%;
+  height: 20px;
 }
 
 .btn{
-  margin: 10px;
-  padding: 10px;
-
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  margin: 5px 0;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+.btn:hover {
+  background-color: #45a049;
 }
