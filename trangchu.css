@@ -1,8 +1,18 @@
-body {
+html, body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  overflow: hidden;
+  padding: 0;
+  height: 100%;
 }
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+} 
 
 .header {
   display: flex;
@@ -175,4 +185,171 @@ body {
 }
 .btn:hover {
   background-color: #45a049;
+}
+
+/* chọn coupon */
+.coupon-section {
+  text-align: center;
+  padding: 20px;
+  background-color: #f8f8f8;
+}
+
+.section-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 3px;
+  background-color: #e60012; /* Đổi màu nếu cần */
+  margin: 8px auto 0;
+}
+
+.coupon-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.coupon-card {
+  display: block;
+  width: 200px;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.coupon-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.coupon-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.lazada {
+  background-color: #4a00e0; 
+}
+
+.shopee {
+  background-color: #ff4500; 
+}
+
+/* câu hỏi */
+.faq-section {
+  padding: 20px;
+  background-color: #f8f8f8;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: left;
+  color: #333;
+}
+
+.faq-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.faq-item {
+  display: block;
+  background-color: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  min-width: calc(50% - 20px);
+  text-align: left;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease-in-out;
+  text-decoration: none; 
+}
+
+.faq-item p {
+  margin: 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.faq-item:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* footer */
+footer {
+  background-color: #b95502;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  margin: 0;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+
+}
+
+.footer-logo {
+  text-align: center;
+}
+
+.footer-logo img {
+  width: 50px;
+}
+
+.footer-contact, .footer-links {
+  margin-top: 20px;
+}
+
+.footer-links h4 {
+  margin-bottom: 10px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0; 
+}
+
+.footer-links ul li {
+  margin: 5px 0;
+}
+
+.footer-links ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-links ul li a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  margin-top: 20px;
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+  font-size: 12px;
+}
+
+.footer-bottom p {
+  margin: 5px 0;
 }
