@@ -1,3 +1,19 @@
+function formatTimestamp(timestamp) {
+  var date = new Date(timestamp * 1000);
+
+  var hours = date.getHours();
+  var minutes = "0" + date.getMinutes();
+  var day = date.getDate();
+  var month = date.getMonth() + 1;
+  var year = date.getFullYear();
+
+  var formattedTime =
+    hours + ":" + minutes.substr(-2) + " " + day + "/" + month + "/" + year;
+  return formattedTime;
+}
+
+console.log(formatTimestamp(1716310740)); // Output: "HH:MM dd/mm/yyyy"
+
 const requestOptions = {
   method: "GET",
   redirect: "follow",
@@ -11,30 +27,40 @@ fetch(
   .then((result) => {
     console.log(result);
     const vouchers = result;
-    const board = document.querySelector(".board");
 
-    board.innerHTML = "";
-
+    const dashboard = document.querySelector(".dashboard");
+    dashboard.innerHTML = "";
     vouchers.forEach((voucher) => {
-      const mgg = document.createElement("div");
-      mgg.className = "mgg";
-
-      mgg.innerHTML = `
-    <a href="#"></a>
-    <div class="voucher-main" style="display: flex; justify-content: center;">
-      <div class="info-voucher"> 
-        <div><span>Giảm giá: ${voucher.name}</span></div>
-        <div><progress value="${voucher.start}" max="${voucher.end}"></progress></div>
-        <div><span>Chi tiết</span></div>
-      </div>
-      <div class="action-voucher">
-        <button class="btn">Dùng ngay</button>
-        <button class="btn">List áp dụng</button>
-      </div>
-    </div>
-  `;
-
-      board.appendChild(mgg);
+      dashboard.innerHTML += `<div class="voucher_item">
+         <div class="voucher_img">
+            <img src="${voucher.icon}" alt="">
+            <p><b>${voucher.apply}</b></p>
+         </div>
+         <div class="voucher_content">
+            <div class="voucher_detail">
+               <div class="voucher_name">
+                  <p id="name1"><b>${voucher.name}</b></p>
+                  <p id="name2">Đơn tối thiểu ${voucher.min_spend}</p>
+                  <div class="voucher_progress">
+                     <progress value="43" max="100" style="width:15rem;"></progress>
+                     <span>43%</span>
+                  </div>
+               </div>
+      
+               <div class="voucher_info">
+                  <p class="voucher_time">HSD: ${formatTimestamp(
+                    voucher.end
+                  )}</p>
+                  <p class="voucher_count">Số lượng: 500 lượt</p>
+               </div>
+      
+            </div>
+            <div class="voucher_btn">
+               <button class="voucher_button" id="btn_copy">Copy</button>
+               <button class="voucher_button" id="btn_apply">Áp dụng</button>
+            </div>
+         </div>
+      </div>`;
     });
   })
   .catch((error) => console.error(error));
