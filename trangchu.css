@@ -78,15 +78,14 @@ main {
   width: calc(25% - 10px);
   margin-right: 10px;
   flex-shrink: 0;
+  border-radius: 15px;
 }
 
-.button-container {
-  position: absolute;
-  top: 50%;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  transform: translateY(-50%);
+.banner-track img {
+  width: calc(25% - 10px);
+  margin-right: 10px;
+  flex-shrink: 0;
+  border-radius: 15px; 
 }
 
 .button {
@@ -96,6 +95,43 @@ main {
   padding: 10px;
   cursor: pointer;
   z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+}
+
+.banner-container:hover .button {
+  opacity: 1;
+}
+
+.button.prev-button {
+  left: 10px;
+}
+
+.button.next-button {
+  right: 10px;
+}
+
+.dot-indicators {
+  text-align: center;
+  padding: 10px 0;
+}
+
+.dot-indicators .dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  background-color: #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dot-indicators .dot.active {
+  background-color: #333;
 }
 
 
@@ -301,36 +337,36 @@ main {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* footer */
+/* Footer */
 footer {
   background-color: #b95502;
   color: white;
-  padding: 20px 0;
+  padding: 40px 20px;
   text-align: center;
-  margin: 0;
 }
 
 .footer-container {
   display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
   max-width: 1200px;
   margin: 0 auto;
-
 }
 
 .footer-logo {
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .footer-logo img {
   width: 50px;
 }
 
-.footer-contact,
-.footer-links {
-  margin-top: 20px;
+.footer-contact, .footer-links {
+  margin: 20px 0;
+  text-align: left;
+  width: 100%;
+  max-width: 300px;
 }
 
 .footer-links h4 {
@@ -340,7 +376,6 @@ footer {
 .footer-links ul {
   list-style: none;
   padding: 0;
-  margin: 0;
 }
 
 .footer-links ul li {
@@ -361,8 +396,23 @@ footer {
   border-top: 1px solid #ccc;
   padding-top: 10px;
   font-size: 12px;
+  width: 100%;
+  text-align: center;
 }
 
 .footer-bottom p {
   margin: 5px 0;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .footer-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .footer-contact, .footer-links {
+    text-align: left;
+    margin: 0;
+  }
 }
