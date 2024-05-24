@@ -2,12 +2,14 @@ html, body {
   margin: 0;
   padding: 0;
   height: 100%;
+  background-color: #f8f8f8;
 }
 
 body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  font-family: 'Roboto', sans-serif;
 }
 
 main {
@@ -68,7 +70,7 @@ main {
 }
 
 .banner-track {
-  display: flex;
+  display: block;
   transition: transform 0.5s ease;
 }
 
@@ -76,6 +78,7 @@ main {
   width: calc(25% - 10px); 
   margin-right: 10px; 
   flex-shrink: 0;
+  border-radius: 15px;
 }
 
 .button-container {
