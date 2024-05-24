@@ -6,16 +6,17 @@
   background-color: white;
   border-bottom: 1px solid #ddd;
   position: sticky;
-         top: 0;
-         z-index: 1000;
+  top: 0;
+  z-index: 1000;
 }
+
 .logo {
   display: flex;
   align-items: center;
 }
 
 .logo img {
-  height: 40px; 
+  height: 40px;
   margin-right: 10px;
 }
 
@@ -35,15 +36,18 @@
   color: black;
   font-size: 16px;
 }
+
 .nav a:hover {
   color: green;
 }
+
 .parent-container {
   display: flex;
   justify-content: center;
   position: relative;
   
 }
+
 .banner-container {
   width: 75%;
   overflow: hidden;
@@ -58,10 +62,9 @@
 }
 
 .banner-track img {
-  width: calc(25% - 10px); 
-  margin-right: 10px; 
+  width: calc(25% - 10px);
+  margin-right: 10px;
   flex-shrink: 0;
-  border-radius: 15px;
 }
 
 .button-container {
@@ -69,9 +72,9 @@
   top: 50%;
   width: 100%;
   display: flex;
-  justify-content: space-between;
   transform: translateY(-50%);
 }
+
 .button {
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
@@ -80,12 +83,14 @@
   cursor: pointer;
   z-index: 1;
 }
+
 @keyframes scroll {
   0% {
-      transform: translateX(0);
+    transform: translateX(0);
   }
+
   100% {
-      transform: translateX(-50%);
+    transform: translateX(-50%);
   }
 }
 
@@ -93,6 +98,9 @@
 
 body {
   font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
 .voucher_item {
@@ -233,7 +241,8 @@ footer {
   width: 50px;
 }
 
-.footer-contact, .footer-links {
+.footer-contact,
+.footer-links {
   margin-top: 20px;
 }
 
@@ -244,7 +253,7 @@ footer {
 .footer-links ul {
   list-style: none;
   padding: 0;
-  margin: 0; 
+  margin: 0;
 }
 
 .footer-links ul li {
