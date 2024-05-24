@@ -6,16 +6,17 @@
   background-color: white;
   border-bottom: 1px solid #ddd;
   position: sticky;
-         top: 0;
-         z-index: 1000;
+  top: 0;
+  z-index: 1000;
 }
+
 .logo {
   display: flex;
   align-items: center;
 }
 
 .logo img {
-  height: 40px; 
+  height: 40px;
   margin-right: 10px;
 }
 
@@ -35,14 +36,17 @@
   color: black;
   font-size: 16px;
 }
+
 .nav a:hover {
   color: green;
 }
+
 .parent-container {
   display: flex;
   justify-content: center;
   position: relative;
 }
+
 .banner-container {
   width: 75%;
   overflow: hidden;
@@ -56,10 +60,9 @@
 }
 
 .banner-track img {
-  width: calc(25% - 10px); 
-  margin-right: 10px; 
+  width: calc(25% - 10px);
+  margin-right: 10px;
   flex-shrink: 0;
-  border-radius: 15px;
 }
 
 .button-container {
@@ -67,9 +70,9 @@
   top: 50%;
   width: 100%;
   display: flex;
-  justify-content: space-between;
   transform: translateY(-50%);
 }
+
 .button {
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
@@ -78,12 +81,14 @@
   cursor: pointer;
   z-index: 1;
 }
+
 @keyframes scroll {
   0% {
-      transform: translateX(0);
+    transform: translateX(0);
   }
+
   100% {
-      transform: translateX(-50%);
+    transform: translateX(-50%);
   }
 }
 
@@ -91,6 +96,9 @@
 
 body {
   font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
 .voucher_item {
@@ -203,4 +211,72 @@ p {
   padding: 2rem;
   border: 1px solid black;
   min-width: 60rem;
+}
+
+
+
+/* footer */
+footer {
+  background-color: #b95502;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  margin: 0;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+
+}
+
+.footer-logo {
+  text-align: center;
+}
+
+.footer-logo img {
+  width: 50px;
+}
+
+.footer-contact,
+.footer-links {
+  margin-top: 20px;
+}
+
+.footer-links h4 {
+  margin-bottom: 10px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links ul li {
+  margin: 5px 0;
+}
+
+.footer-links ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-links ul li a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  margin-top: 20px;
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+  font-size: 12px;
+}
+
+.footer-bottom p {
+  margin: 5px 0;
 }
