@@ -120,7 +120,7 @@ function getVoucher(category) {
 }
 
 // BLA BLA
-getVoucher("Lazada");
+getVoucher("Shopee");
 
 document.addEventListener("DOMContentLoaded", () => {
   const track = document.querySelector(".banner-track");
