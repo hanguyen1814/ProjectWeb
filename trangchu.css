@@ -18,12 +18,17 @@ main {
 }
 
 .header {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
+  padding-right: 60px;
   background-color: white;
   border-bottom: 1px solid #ddd;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
 }
 
 .logo {
@@ -34,18 +39,15 @@ main {
 .logo img {
   height: 40px;
   margin-right: 10px;
+  border-radius: 50%;
 }
 
-.nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.nav {
   display: flex;
+  gap: 2rem;
+  padding-right: 2rem;
 }
 
-.nav li {
-  margin-left: 20px;
-}
 
 .nav a {
   text-decoration: none;
@@ -54,7 +56,7 @@ main {
 }
 
 .nav a:hover {
-  color: green;
+  color: #008080;
 }
 
 .parent-container {
@@ -355,12 +357,16 @@ footer {
 }
 
 .footer-logo {
+  display: flex;
   text-align: center;
   margin-bottom: 20px;
+  align-items: center;
 }
 
 .footer-logo img {
   width: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
 }
 
 .footer-contact, .footer-links {

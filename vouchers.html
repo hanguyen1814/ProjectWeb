@@ -5,8 +5,8 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Document</title>
-   <link rel="stylesheet" href="style.css">
-   <link rel="stylesheet" href="./trangchu.css">
+   <link rel="stylesheet" href="./style.css">
+   <!-- <link rel="stylesheet" href="./trangchu.css"> -->
    <style>
       .color1 {
          color: #FF7F50;
@@ -28,16 +28,16 @@
       <a href="./trangchu.html" style="text-decoration: none;"  >
       <div class="logo">
          <img
-            src="https://scontent.fhan14-1.fna.fbcdn.net/v/t39.30808-6/441935775_1926960557779133_8758113716823365338_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeHVepZL_hObx_VZeu3wGUHQAYyaWKa4b-ABjJpYprhv4F7qTN-A0jAWIoNkcc9ojhdtvpRYosr0qIX_7Q07uXO7&_nc_ohc=Y-dGZBruheYQ7kNvgFFB0le&_nc_ht=scontent.fhan14-1.fna&oh=00_AYDscHwHFepeJOFG4-TAXW4W5DerqpKJRJiU3GlVuPiigw&oe=664E3D1C"
+            src="https://scontent.fhan5-6.fna.fbcdn.net/v/t39.30808-6/399281164_1778312195965217_2048786399713402195_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeESXRSJ1EmTxEHo5rkqgFofA0t4Qsz5iOADS3hCzPmI4A1sdF3PgR37dPHx-KWo6Y-EXTCR-X65XrZXib2XSSOA&_nc_ohc=_U9oQ8u0jpQQ7kNvgEnmcSy&_nc_ht=scontent.fhan5-6.fna&oh=00_AYD9Syi56bU8y9l23AoQ9rAzPJPpXslsOOCO9FU3RsvU9g&oe=665FDDBA"
             alt="Logo">
          <span class="color1">Web</span> <span class="color2">giamgia</span>
       </div></a>
       <nav class="nav">
-         <ul>
-            <li><a href="./trangchu.html">Trang chủ</a></li>
-            <li><a href="./index.html">Mã giảm giá</a></li>
-            <li><a href="./Hotro.html">Trung tâm hỗ trợ</a></li>
-         </ul>
+
+          <div class="nav_item"><a href="./trangchu.html">Trang chủ</a></div>
+          <div class="nav_item"><a href="./index.html">Mã giảm giá</a></div>
+          <div class="nav_item"><a href="./Hotro.html">Trung tâm hỗ trợ</a></div>
+
       </nav>
    </header>
 
@@ -83,13 +83,19 @@
       </div>
    </div>
    <div class="dashboard">
-
+      <div class="menu_voucher">
+        <button class="list_shopee" id="menuList" onclick="getVoucher('Shopee')"><span><img src="./Shopee img/logo.png" alt=""></span><b>Shopee</b></button>
+        <button class="list_lazada" id="menuList" onclick="getVoucher('Lazada')"><span><img src="./Lazada img/logo2.png" alt="" style="height: 45px; width:45px"></span><b>Lazada</b></button>
+      </div>
+      <div class="list_voucher">
+        
+      </div>
    </div>
    <footer>
       <div class="footer-container">
          <a href="./trangchu.html" style="text-decoration: none;">
             <div class="footer-logo">
-              <img src="https://scontent.fhan14-1.fna.fbcdn.net/v/t39.30808-6/441935775_1926960557779133_8758113716823365338_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeHVepZL_hObx_VZeu3wGUHQAYyaWKa4b-ABjJpYprhv4F7qTN-A0jAWIoNkcc9ojhdtvpRYosr0qIX_7Q07uXO7&_nc_ohc=Y-dGZBruheYQ7kNvgFFB0le&_nc_ht=scontent.fhan14-1.fna&oh=00_AYDscHwHFepeJOFG4-TAXW4W5DerqpKJRJiU3GlVuPiigw&oe=664E3D1C" alt="Logo">
+              <img src="https://scontent.fhan5-6.fna.fbcdn.net/v/t39.30808-6/399281164_1778312195965217_2048786399713402195_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeESXRSJ1EmTxEHo5rkqgFofA0t4Qsz5iOADS3hCzPmI4A1sdF3PgR37dPHx-KWo6Y-EXTCR-X65XrZXib2XSSOA&_nc_ohc=_U9oQ8u0jpQQ7kNvgEnmcSy&_nc_ht=scontent.fhan5-6.fna&oh=00_AYD9Syi56bU8y9l23AoQ9rAzPJPpXslsOOCO9FU3RsvU9g&oe=665FDDBA" alt="Logo">
               <span class="color1">Web</span> <span class="color2">giamgia</span>
             </div>
           </a>
