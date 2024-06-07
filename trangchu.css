@@ -63,6 +63,7 @@ main {
   display: flex;
   justify-content: center;
   position: relative;
+  margin-top: 60px;
 }
 
 .banner-container {
