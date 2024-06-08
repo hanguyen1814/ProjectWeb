@@ -218,18 +218,7 @@ var sttFunc = function sttFunc() {
   sttScroll();
   sttClick();
 };
-//Button xem them
-function seeMore() {
-  const voucherList = document.getElementById('voucherList');
-  const seeMoreBtn = document.getElementById('seeMoreBtn');
-  if (voucherList.classList.contains('expanded')) {
-    voucherList.classList.remove('expanded');
-    seeMoreBtn.textContent = 'Xem thêm';
-  } else {
-    voucherList.classList.add('expanded');
-    seeMoreBtn.textContent = 'Thu gọn';
-  }
-};
+
 
 
 document.addEventListener("DOMContentLoaded", sttFunc);
