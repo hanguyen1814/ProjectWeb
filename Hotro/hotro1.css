@@ -74,6 +74,14 @@ main{
     word-spacing: 2px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
+.blog ol{
+    font-size: 18px;
+    margin: 1em;
+    line-height: 40px;
+    word-spacing: 2px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+
+}
 .blog img {
     justify-content: center;
     border-radius: 15px;
