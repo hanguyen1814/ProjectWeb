@@ -24,6 +24,17 @@ function formattedAmount(amount) {
   return formattedAmount;
 }
 
+function copyVoucherCode(code, element) {
+  var voucherCode = code;
+  var tempInput = document.createElement("input");
+  tempInput.value = voucherCode;
+  document.body.appendChild(tempInput);
+  tempInput.select();
+  document.execCommand("copy");
+  document.body.removeChild(tempInput);
+  console.log("Copied");
+  element.textContent = "Copied";
+}
 // CALL DATA
 function getVoucher(category) {
   const list_voucher = document.querySelector(".list_voucher");
@@ -44,6 +55,7 @@ function getVoucher(category) {
       list_voucher.innerHTML = "";
       vouchers.forEach((voucher) => {
         if (category == "Shopee") {
+          code = voucher.code;
           list_voucher.innerHTML += `<div class="voucher_item">
          <div class="voucher_img">
             <img src="${voucher.icon}" alt="">
@@ -53,16 +65,17 @@ function getVoucher(category) {
             <div class="voucher_detail">
                <div class="voucher_name">
                   <p id="name1"><b>${voucher.name}</b></p>
-                  <p id="name2">Đơn tối thiểu ${voucher.min_spend}</p>
+                  <p id="name2">Đơn từ ${voucher.min_spend}</p>
                   <div class="voucher_progress">
-                     <progress value="43" max="100" style="width:200px;"></progress>
-                     <span>43%</span>
+                     <progress value="${
+                       voucher.used
+                     }" max="100" style="width:150px;"></progress>
+                     <span>${voucher.used}%</span>
                   </div>
-                  <br>
                   <p class="voucher_time">HSD: ${formatTimestamp(
                     voucher.end
                   )}</p>
-                  <p class="voucher_count">Số lượng: 500 lượt</p>
+                  <p class="voucher_count">Số lượng: ${voucher.count} lượt</p>
                </div>
       
                <div class="voucher_info">
@@ -70,12 +83,18 @@ function getVoucher(category) {
       
             </div>
             <div class="voucher_btn">
-               <button class="voucher_button" id="btn_copy">Copy</button>
-               <button class="voucher_button" id="btn_apply">Áp dụng</button>
+               <button class="voucher_button" id="btn_copy" onclick="copyVoucherCode(
+                 '${voucher.code}', this
+               )">Copy</button>
+               <button class="voucher_button" id="btn_apply" onclick="window.open('${
+                 voucher.link_aff
+               }', '_blank');">Áp dụng</button>
             </div>
          </div>
       </div>`;
-        } else {
+        }
+        // Lazada
+        else {
           list_voucher.innerHTML += `<div class="voucher_item_laz">
           <div class="voucher_img_laz">
             <img src="./Lazada img/logo2.png" alt="">
@@ -118,9 +137,6 @@ function getVoucher(category) {
     })
     .catch((error) => console.error(error));
 }
-
-// BLA BLA
-getVoucher("Shopee");
 
 document.addEventListener("DOMContentLoaded", () => {
   const track = document.querySelector(".banner-track");
@@ -171,7 +187,7 @@ document.addEventListener("DOMContentLoaded", () => {
   createDots();
   updateTrackPosition();
   setInterval(nextImage, 5000);
-  
+
   document.querySelector(".next-button").addEventListener("click", nextImage);
   document.querySelector(".prev-button").addEventListener("click", prevImage);
 });
@@ -219,6 +235,5 @@ var sttFunc = function sttFunc() {
   sttClick();
 };
 
-
-
 document.addEventListener("DOMContentLoaded", sttFunc);
+// getVoucher("Shopee");

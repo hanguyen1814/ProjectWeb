@@ -35,11 +35,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function updateDots() {
     const dots = document.querySelectorAll(".dot");
-    dots.forEach(dot => dot.classList.remove("active"));
+    dots.forEach((dot) => dot.classList.remove("active"));
     dots[currentIndex].classList.add("active");
   }
 
-  banners.forEach(banner => {
+  banners.forEach((banner) => {
     const clone = banner.cloneNode(true);
     track.appendChild(clone);
   });
@@ -54,28 +54,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // back to top
 
-var sttElem = document.querySelector('.stt');
+var sttElem = document.querySelector(".stt");
 var screanHeight = window.innerHeight;
 
 var sttScroll = function sttScroll() {
-  document.addEventListener('scroll', function (e) {
+  document.addEventListener("scroll", function (e) {
     if (screanHeight <= window.scrollY) {
-      sttElem.classList.add('stt__active');
+      sttElem.classList.add("stt__active");
     } else if (e.target.scrollingElement.scrollTop <= screanHeight) {
-      sttElem.classList.remove('stt__active');
-      sttElem.style.pointerEvents = 'auto';
+      sttElem.classList.remove("stt__active");
+      sttElem.style.pointerEvents = "auto";
     }
   });
 };
 
 var sttClick = function sttClick() {
-  sttElem.addEventListener('click', function () {
+  sttElem.addEventListener("click", function () {
     var docHeight = window.scrollY;
     var progress = 0;
     var position = docHeight;
     var speed = 5;
 
-    sttElem.style.pointerEvents = 'none';
+    sttElem.style.pointerEvents = "none";
 
     var sttAnim = function sttAnim() {
       progress += 1;
@@ -96,4 +96,62 @@ var sttFunc = function sttFunc() {
   sttClick();
 };
 
-document.addEventListener('DOMContentLoaded', sttFunc);
+document.addEventListener("DOMContentLoaded", sttFunc);
+
+// rcm products
+function formattedAmount(amount) {
+  let formattedAmount = amount.toLocaleString("vi-VN") + "đ";
+  return formattedAmount;
+}
+
+function getPrd(category) {
+  const listPrd = document.querySelector(".rcm_dash");
+  listPrd.innerHTML = `<div class="loader"></div>`;
+  const requestOptions = {
+    method: "GET",
+    redirect: "follow",
+  };
+
+  fetch(
+    `https://script.google.com/macros/s/AKfycby4NqoHt9m_TpfLlJnpgN3qJZt-K0bMGyfvKsKyV39FS0_8hxN7E5VbP4bOMdd-KQoF7w/exec?category=${category}`,
+    requestOptions
+  )
+    .then((response) => response.json())
+    .then((result) => {
+      console.log(result);
+      const prds = result;
+      listPrd.innerHTML = "";
+      prds.forEach((item) => {
+        listPrd.innerHTML += `<div class="item_shopee">
+  <div class="img_prd" style="position: relative;">
+    <a href="${item.link}" target="_blank">
+      <img src="${item.Img}" alt="">
+    </a>
+    <div class="sale_off">
+      <p>-${item.raw_discount}%</p>
+    </div>
+  </div>
+  <div class="detail_prd">
+    <div class="namePrd">
+      <a href="${item.link}" target="_blank">
+        ${item.name}
+      </a>
+    </div>
+  </div>
+  <div class="price">
+    <div class="price_sale" id="price">
+      <p style="color: red;">${formattedAmount(item.price)}</p>
+    </div>
+    <div class="price_origin" id="price">
+      <p style="color: black;"><del>${formattedAmount(
+        item.price_origin
+      )}</del></p>
+    </div>
+  </div>
+</div>`;
+      });
+    })
+    .catch((error) => console.error(error));
+}
+
+getPrd("Recommend");

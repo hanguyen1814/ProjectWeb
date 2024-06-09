@@ -15,9 +15,10 @@
 .body {
     margin-top: 60px;
     padding: 20px;
+    font-family: 'Roboto', sans-serif;
 
 }
-.boardcard {
+.tabcontent {
     display: flex;
     max-width: 1200px;
     width: 100%;
@@ -137,4 +138,46 @@
 .link-bubble a:hover {
     background-color: #FF6347;
 
+}
+
+/* tabs */
+.hidden {
+    display: none;
+}
+
+.tab {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+.tab button {
+    width: 200px;
+    height: 50px;
+    border: none !important;
+    background-color: #F9F9F9;
+}
+
+#menuList {
+    width: 150px;
+    height: 60px;
+    border: 1px solid black;
+    /* border-radius: 60px; */
+    font-size: 20px;
+    color: black;
+}
+
+#menuList img {
+    width: 50px;
+    height: 50px;
+    padding-right: 5px;
+    padding-top: 5px;
+
+}
+
+.tablinks{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
