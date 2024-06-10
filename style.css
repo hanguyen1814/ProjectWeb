@@ -363,8 +363,8 @@ p {
   display: flex;
   flex: 1;
   /* flex-direction: column; */
-  row-gap: 30px;
-  column-gap: 50px;
+  row-gap: 40px;
+  column-gap: 60px;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
