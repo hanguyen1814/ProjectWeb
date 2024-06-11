@@ -155,3 +155,14 @@ function getPrd(category) {
 }
 
 getPrd("Recommend");
+
+function getData(category) {
+  const listPrd = document.querySelector("class");
+  const requestOptions = { method: "GET", redirect: "follow" };
+  fetch(`API?category=${category}`, requestOptions)
+    .then((response) => response.json())
+    .then((result) => {
+      console.log(result);
+    })
+    .catch((error) => console.error(error));
+}
